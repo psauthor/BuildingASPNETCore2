@@ -1,0 +1,31 @@
+﻿<div class="row">
+  <h3>Confirm Order</h3>
+  <table class="table table-bordered table-hover">
+    <tr *ngFor="let o of data.order.items">
+      <td><img src="/img/{{ o.productArtId }}.jpg" alt="o.productTitle" class="img-thumbnail checkout-thumb" /></td>
+      <td>{{ o.productCategory }}({{ o.productSize }}) - {{ o.productArtist }}: {{ o.productTitle }}</td>
+      <td>{{ o.quantity }}</td>
+      <td>{{ o.unitPrice|currency:'USD':true }}</td>
+      <td>{{ (o.unitPrice * o.quantity)|currency:'USD':true }}</td>
+    </tr>
+  </table>
+  <div class="col-md-4 col-md-offset-8 text-right">
+    <table class="table table-condensed">
+      <tr>
+        <td class="text-right">Subtotal</td>
+        <td class="text-right">{{ data.order.subTotal()|currency:'USD':true }}</td>
+      </tr>
+      <tr>
+        <td class="text-right">Shipping</td>
+        <td class="text-right">$ 0.00</td>
+      </tr>
+      <tr>
+        <td class="text-right">Total:</td>
+        <td class="text-right">{{ data.order.subTotal()|currency:'USD':true }}</td>
+      </tr>
+    </table>
+    <button class="btn btn-success" (click)="onCheckout()">Complete Purchase</button>
+    <a routerLink="/" class="btn btn-info">Cancel</a>
+  </div>
+
+</div>
