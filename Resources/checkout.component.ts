@@ -1,5 +1,5 @@
 ﻿import { Component } from "@angular/core";
-import { DataService } from '../shared/data.service';
+import { DataService } from '../shared/dataService';
 
 @Component({
   selector: "checkout",
