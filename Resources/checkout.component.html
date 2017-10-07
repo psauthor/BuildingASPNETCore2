@@ -13,7 +13,7 @@
     <table class="table table-condensed">
       <tr>
         <td class="text-right">Subtotal</td>
-        <td class="text-right">{{ data.order.subTotal()|currency:'USD':true }}</td>
+        <td class="text-right">{{ data.order.subtotal|currency:'USD':true }}</td>
       </tr>
       <tr>
         <td class="text-right">Shipping</td>
@@ -21,7 +21,7 @@
       </tr>
       <tr>
         <td class="text-right">Total:</td>
-        <td class="text-right">{{ data.order.subTotal()|currency:'USD':true }}</td>
+        <td class="text-right">{{ data.order.subtotal|currency:'USD':true }}</td>
       </tr>
     </table>
     <button class="btn btn-success" (click)="onCheckout()">Complete Purchase</button>
